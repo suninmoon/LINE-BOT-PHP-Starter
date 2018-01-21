@@ -46,10 +46,10 @@ curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
 			curl_close($ch);
-
+$url = ' https://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button2/1 ';
 			echo $result . "\r\n";
 		}
-		$url = ' https://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button2/1 ';
+		
 	}
 }
 echo "OK";
