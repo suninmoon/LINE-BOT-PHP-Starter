@@ -23,6 +23,7 @@ if (!is_null($events['events'])) {
 			$messages = [
 				'type' => 'text',
 				'text' => $text
+			$url = ' https://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button2/1 ';
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
