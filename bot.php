@@ -6,14 +6,15 @@ $proxyauth = 'pondmyinlove@gmail.com:0836458085Pp';
 
 $events = json_decode($content, true);
 $events0 = json_decode($content0, true);
-$content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1');
-$content0 = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0');
+//$content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1');
+//$content0 = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0');
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == '$messages' && $event['$messages']['type'] == '1') {
-			
+		$content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1');
+
 //$content = file_get_contents('php://input');
 			// Get text sent
 			$Text = $event['message']['text'];
@@ -58,7 +59,7 @@ if (!is_null($events0['events'])) {
 	foreach ($events0['events0'] as $event0) {
 		if ($event0['type'] == '$messages0' && $event0['$messages0']['type'] == '0') {
 			//$content = file_get_contents('php://input');
-//$content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0');
+$content0 = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0');
 			// Get text sent
 			$Text = $event0['message0']['text'];
 			// Get replyToken
