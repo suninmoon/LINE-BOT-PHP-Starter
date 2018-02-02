@@ -50,31 +50,36 @@ curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 			curl_close($ch);
 			echo $result . "\r\n";
 		}
-
-		if ($event0['type'] == '$messages' && $event0['$messages']['type'] == '0') {
+	}echo "ok";
+}
+		
+if (!is_null($events0['events'])) {
+	// Loop through each event
+	foreach ($events0['events0'] as $event0) {
+		if ($event0['type'] == '$messages0' && $event0['$messages0']['type'] == '0') {
 			//$content = file_get_contents('php://input');
 //$content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0');
 			// Get text sent
-			$Text = $event0['message']['text'];
+			$Text = $event0['message0']['text'];
 			// Get replyToken
 			$replyToken = $event0['replyToken'];
 		
 			// Build message to reply back
-			$messages = [
+			$messages00 = [
 				'type' == 'text',
 				'text' == [$Text],
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
 			
-			$url = 'https://api.line.me/v2/bot/message/reply';
+			$url = 'https://api.line.me/v2/bot/message0/reply';
 			
-			$data = [
+			$data0 = [
 				
 				'replyToken' => $replyToken,
-				'messages' => [$messages],
+				'messages0' => [$messages0],
 			];
-			$post = json_encode($data);
+			$post = json_encode($data0);
 			$headers = array('Content0-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 			$ch = curl_init($url);
