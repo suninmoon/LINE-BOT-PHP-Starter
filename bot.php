@@ -57,7 +57,7 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
 		if ($event['type'] == '$messages' && $event['$messages']['type'] == '0') {
 			//$content = file_get_contents('php://input');
-//$content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0');
+$content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0');
 			// Get text sent
 			$Text = $event['message']['text'];
 			// Get replyToken
