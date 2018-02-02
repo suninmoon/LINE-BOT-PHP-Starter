@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' == '1',
-				'text' == [$Text],
+				'text' == '$content',
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -35,7 +35,7 @@ if (!is_null($events['events'])) {
 			$data = [
 				
 				'replyToken' => $replyToken,
-				'messages' => [$content],
+				'messages' => [$messages],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -63,9 +63,9 @@ curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 			$replyToken = $event0['replyToken'];
 		
 			// Build message to reply back
-			$messages00 = [
+			$messages0 = [
 				'type0' == '0',
-				'text' == [$Text],
+				'text' == [$content0],
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -75,7 +75,7 @@ curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 			$data0 = [
 				
 				'replyToken' => $replyToken,
-				'messages0' => [$content0],
+				'messages0' => [$messages0],
 			];
 			$post = json_encode($data0);
 			$headers = array('Content0-Type0: application/json', 'Authorization: Bearer ' . $access_token);
