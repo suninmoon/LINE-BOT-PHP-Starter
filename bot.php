@@ -4,7 +4,7 @@ $access_token = 'Ke4AD7dO7T4uy2KuNUueCSpwn4ja4UbM8oFPXz9ybpFjy9j7igeFF1l0V1f1p7j
 $proxy = 'http://fixie:MW30JqTyxH5cpYt@velodrome.usefixie.com:80';
 $proxyauth = 'pondmyinlove@gmail.com:0836458085Pp';
 
-$events = json_decode($contentA, true);
+$events = json_decode($content, true);
 $content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1');
 
 //$eventsB = json_decodeB($contentB, true);
