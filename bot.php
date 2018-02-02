@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 			$messages = [
 					'type' => 'text',
  					'type' =>'View details',
-					'text' => '$urlapi',
+					'text' => [$urlapi],
  		   
 			];
 
