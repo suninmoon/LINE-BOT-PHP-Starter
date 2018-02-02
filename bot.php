@@ -6,7 +6,7 @@ $proxyauth = 'pondmyinlove@gmail.com:0836458085Pp';
 
 $content = file_get_contents('php://input');
 $events = json_decode($content, true);
-$urlapi = 'http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1';
+$url = 'http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1';
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => '$urlapi',
+				'text' => '$url',
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -50,4 +50,4 @@ curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 		
 	}
 }
-echo "OK";
+echo "http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1";
