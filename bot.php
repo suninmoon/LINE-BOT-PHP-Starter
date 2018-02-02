@@ -14,14 +14,14 @@ if (!is_null($events['events'])) {
 			//$content = file_get_contents('php://input');
 $content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1');
 			// Get text sent
-			$Text = $event['message']['1'];
+			$Text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 		
 			// Build message to reply back
 			$messages = [
 				'type' == '1',
-				'1' == [$content],
+				'text' == [$content],
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -48,19 +48,20 @@ curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 			curl_close($ch);
 			echo $result . "\r\n";
 		}
+		echo "http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1";
 		
 		if ($event['type'] == '$messages' && $event['$messages']['type'] == '0') {
 			//$content = file_get_contents('php://input');
 $content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0');
 			// Get text sent
-			$Text = $event['message']['0'];
+			$Text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 		
 			// Build message to reply back
 			$messages = [
 				'type' == '0',
-				'0' == [$content],
+				'text' == [$content],
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -87,8 +88,8 @@ curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 			curl_close($ch);
 			echo $result . "\r\n";
 		}
-		
+		echo "http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0";
 	}
 }
 
-echo "OK";
+
