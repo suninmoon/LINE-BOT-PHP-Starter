@@ -44,7 +44,7 @@ curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			$resultA = curl_exec($ch);
+			$result = curl_exec($ch);
 			curl_close($ch);
 			echo $result . "\r\n";
 		}
