@@ -6,7 +6,7 @@ $proxyauth = 'pondmyinlove@gmail.com:0836458085Pp';
 
 $events = json_decode($content, true);
 //$events0 = json_decode($content0, true);
-//$content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1');
+$content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1');
 //$content0 = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0');
 if (!is_null($events['events'])) {
 	// Loop through each event
@@ -14,7 +14,7 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == '$messages' && $event['$messages']['type'] == '1') {
 			//$events = json_decode($content, true);
-	$content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1');
+	//$content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1');
 
 //$content = file_get_contents('php://input');
 			// Get text sent
@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' == '1',
-				'1' == '$content',
+				'1' == [$content],
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
