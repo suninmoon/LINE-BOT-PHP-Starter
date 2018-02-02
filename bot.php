@@ -24,7 +24,7 @@ if (!is_null($events['events'])) {
 		
 			// Build message to reply back
 			$messages = [
-				'type' == 'text',
+				'type' == '1',
 				'text' == [$Text],
 			];
 
@@ -35,7 +35,7 @@ if (!is_null($events['events'])) {
 			$data = [
 				
 				'replyToken' => $replyToken,
-				'messages' => [$content1],
+				'messages' => [$content],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -52,11 +52,8 @@ curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 			curl_close($ch);
 			echo $result . "\r\n";
 		}
-	}echo "ok";
-		
-	// Loop through each event
-	foreach ($events0['events0'] as $event0) {
-		if ($event0['type'] == '$messages0' && $event0['$messages0']['type'] == '0') {
+
+		if ($event0['type0'] == '$messages0' && $event0['$messages0']['type0'] == '0') {
 			//$content = file_get_contents('php://input');
 			//$events0 = json_decode($content0, true);
 //$content0 = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0');
@@ -67,7 +64,7 @@ curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 		
 			// Build message to reply back
 			$messages00 = [
-				'type' == 'text',
+				'type0' == '0',
 				'text' == [$Text],
 			];
 
@@ -81,7 +78,7 @@ curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 				'messages0' => [$content0],
 			];
 			$post = json_encode($data0);
-			$headers = array('Content0-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			$headers = array('Content0-Type0: application/json', 'Authorization: Bearer ' . $access_token);
 
 			$ch = curl_init($url0);
 			curl_setopt($ch, CURLOPT_PROXY, $proxy);
