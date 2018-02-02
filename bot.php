@@ -15,7 +15,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == '$messages' && $event['$messages']['type'] == '1') {
 
 			// Get text sent
-			$Text = $event['message']['text'];
+			$Text = $event['message']['1'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 		
