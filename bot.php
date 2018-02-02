@@ -5,8 +5,9 @@ $proxy = 'http://fixie:MW30JqTyxH5cpYt@velodrome.usefixie.com:80';
 $proxyauth = 'pondmyinlove@gmail.com:0836458085Pp';
 
 $events = json_decode($content, true);
+$events0 = json_decode($content0, true);
 $content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1');
-$content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0');
+$content0 = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0');
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
@@ -21,7 +22,7 @@ if (!is_null($events['events'])) {
 		
 			// Build message to reply back
 			$messages = [
-				'type' == '1',
+				'type' == 'text',
 				'text' == [$Text],
 			];
 
@@ -49,24 +50,18 @@ curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 			curl_close($ch);
 			echo $result . "\r\n";
 		}
-	}
-	echo "http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1";
-}	
 
-if (!is_null($events['events'])) {
-	// Loop through each event
-	foreach ($events['events'] as $event) {
-		if ($event['type'] == '$messages' && $event['$messages']['type'] == '0') {
+		if ($event0['type'] == '$messages' && $event0['$messages']['type'] == '0') {
 			//$content = file_get_contents('php://input');
 //$content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0');
 			// Get text sent
-			$Text = $event['message']['text'];
+			$Text = $event0['message']['text'];
 			// Get replyToken
-			$replyToken = $event['replyToken'];
+			$replyToken = $event0['replyToken'];
 		
 			// Build message to reply back
 			$messages = [
-				'type' == '0',
+				'type' == 'text',
 				'text' == [$Text],
 			];
 
@@ -80,7 +75,7 @@ if (!is_null($events['events'])) {
 				'messages' => [$messages],
 			];
 			$post = json_encode($data);
-			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			$headers = array('Content0-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_PROXY, $proxy);
@@ -96,7 +91,7 @@ curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 		}
 		
 	}
-echo "http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0";
+echo "ok";
 }
 
 
