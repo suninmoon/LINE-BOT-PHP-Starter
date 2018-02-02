@@ -23,9 +23,11 @@ if (!is_null($events['events'])) {
 				//'text' => [$urlapi],
 			//];
 			$messages = [
-					   "type":"uri",
- 					   "label":"View details",
- 					   "uri":"http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1"
+					$urlapi = 'http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1';
+					'type' => 'text',
+ 					'type' =>'View details',
+					'text' => '$urlapi',
+ 		   
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
