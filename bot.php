@@ -92,9 +92,7 @@ curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
 			curl_close($ch);
 			echo $result . "\r\n";
 		}
-		
+		echo "ok";
 	}
-echo "ok";
+
 }
-
-
