@@ -4,7 +4,7 @@ $access_token = 'Ke4AD7dO7T4uy2KuNUueCSpwn4ja4UbM8oFPXz9ybpFjy9j7igeFF1l0V1f1p7j
 $proxy = 'http://fixie:MW30JqTyxH5cpYt@velodrome.usefixie.com:80';
 $proxyauth = 'pondmyinlove@gmail.com:0836458085Pp';
 
-$events = json_decode($content, true);
+//$events = json_decode($content, true);
 //$events0 = json_decode($content0, true);
 //$content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1');
 //$content0 = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0');
@@ -13,7 +13,7 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == '$messages' && $event['$messages']['type'] == '1') {
-			//$events = json_decode($content, true);
+			$events = json_decode($content, true);
 	$content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1');
 
 //$content = file_get_contents('php://input');
