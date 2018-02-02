@@ -11,16 +11,16 @@ if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
-		if ($event['type'] == '1' && $event['1']['type'] == '1') {
+		if ($event['type'] == '$messages' && $event['$messages']['type'] == 'Text') {
 			// Get text sent
-			$1 = $event['1']['1'];
+			$Text = $event['message']['Text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
 			$messages = [
-				'type' => '1',
-				'1' => [$content],
+				'type' == '1',
+				'Text' == [$content],
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
