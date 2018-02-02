@@ -5,26 +5,27 @@ $proxy = 'http://fixie:MW30JqTyxH5cpYt@velodrome.usefixie.com:80';
 $proxyauth = 'pondmyinlove@gmail.com:0836458085Pp';
 
 $events = json_decode($content, true);
+//$events0 = json_decode($content0, true);
 $content = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/1');
-
-//$eventsB = json_decodeB($contentB, true);
-//$contentB = file_get_contentsB('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0');
-
+//$content0 = file_get_contents('http://api.anto.io/channel/set/tZlbFUDeFGiTmSxQEjm3PaOdtQM7g024mJOuYp64/Messaging/button1/0');
 if (!is_null($events['events'])) {
-
+	// Loop through each event
 	foreach ($events['events'] as $event) {
-
+		// Reply only when message sent is in 'text' format
 		if ($event['type'] == '$messages' && $event['$messages']['type'] == '1') {
 
-			$Text = $event['message']['1'];
-
+			// Get text sent
+			$Text = $event['message']['text'];
+			// Get replyToken
 			$replyToken = $event['replyToken'];
-
-			$messages= [
+		
+			// Build message to reply back
+			$messages = [
 				'type' == '1',
-				'1' == '$content',
+				'text' == [$content],
 			];
 
+			// Make a POST Request to Messaging API to reply to sender
 			
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			
@@ -39,7 +40,7 @@ if (!is_null($events['events'])) {
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_PROXY, $proxy);
 curl_setopt($ch, CURLOPT_PROXYUSERPWD, $proxyauth);
-			curl_setopt($ch CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
