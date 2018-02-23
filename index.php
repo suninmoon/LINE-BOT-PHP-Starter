@@ -1,3 +1,5 @@
+nes (2 sloc)  29 Bytes
+
 <button onclick="popupModal('sample_data.php',500,200);">Sample Popup</button>
  
 <script type="text/javascript">
@@ -19,3 +21,7 @@ function popupModal(url,width,height){
     //  window.showModalDialog(url,"", diaxFeature); 
 }
 </script>
+
+
+<?php
+echo "Hello LINE BOT";
